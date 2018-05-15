@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>mu</title>
+</head>
+<script>
+  (function () {
+    var adaptation = { //适配
+      shipei: function () {
+        var num = 1 / window.devicePixelRatio; //获取比例
+        //var num = 1/window.devicePixelRatio;
+        var meta = document.createElement('meta'); //创建meta标签
+        //var meta = document.createElement('meta');
+        meta.name = 'viewport'; //创建视口
+        //meta.name = 'viewport';
+        meta.content = 'width = device-width,user-scalable=no,initial-scale=' + num; //适配
+        //meta.content = 'width = device-width, initial-scale='+num;
+        document.documentElement.appendChild(meta); //把标签添加到html中
+        //document.documentElement.appendChild(meta);		
+        var fontsize = document.documentElement.clientWidth / 10; //获取字体大小
+        //var fontSize = document.documentElement.clientWidth/10;
+        document.documentElement.style.fontSize = fontsize + 'px'; //设置html字号大小
+        //document.documentElement.style.fontSize = fontSize + 'px';
+      }
+    }
+    adaptation.shipei();
+  })()
+
+</script>
+
+<body>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+</body>
+
+</html>
